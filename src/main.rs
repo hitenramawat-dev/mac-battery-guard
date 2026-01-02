@@ -81,7 +81,7 @@ impl Alarm {
 
 
 fn main() {
-    let monitor = Battery::new(73);
+    let monitor = Battery::new(80);
     let alarm = Alarm::new();
 
 
