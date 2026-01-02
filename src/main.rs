@@ -28,13 +28,13 @@ impl Battery {
         let text = String::from_utf8(output.stdout)?;
         let chars: Vec<char> = text.chars().collect();
 
-        // find index of %
+
         let percent_index = chars
             .iter()
             .position(|&c| c == '%')
             .ok_or_else(|| anyhow::anyhow!("Could not find % symbol"))?;
 
-        // find start of number before %
+    
         let start = chars[..percent_index]
             .iter()
             .rposition(|c| !c.is_ascii_digit())
